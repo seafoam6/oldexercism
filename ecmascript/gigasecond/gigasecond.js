@@ -1,12 +1,12 @@
 class Gigasecond{
   constructor(dateInput){
     this.dateInput = dateInput;
-    this.millionSeconds = 1000000000000;
+    this.billionSeconds = 1000000000000;
   }
 
   date(){
     const dateInput = this.dateInput.getTime();
-    const endTime = new Date(dateInput + this.millionSeconds)
+    const endTime = new Date(dateInput + this.billionSeconds)
     return endTime;
   }
 }
