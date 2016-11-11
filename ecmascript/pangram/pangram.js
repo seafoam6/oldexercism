@@ -44,12 +44,13 @@ function pangram(){
     })
 
     for (var letter in alphabet){
-      if (alphabet.hasOwnProperty(letter) && alphabet[letter] != 1){
-        return "false";
+      if (alphabet.hasOwnProperty(letter) && alphabet[letter] < 1){
+        //console.log(letter)
+       return "false";
       }
     }
 
-    return true;
+    return "true";
 
 
   }
