@@ -1,13 +1,16 @@
-function pangram(sentence){
+class Pangram{
 
+  constructor(sentence){
+    this.sentence = sentence;
+  }
 
-  this.isPangram = function(){
+  isPangram(){
 
-    if (!sentence){
+    if (!this.sentence){
       return false;
     }
 
-    var cleaned = sentence.replace(/[^A-Za-z]/g, '').toLowerCase();
+    var cleaned = this.sentence.replace(/[^A-Za-z]/g, '').toLowerCase();
 
     var alphabet = {
       a:0,
@@ -46,18 +49,14 @@ function pangram(sentence){
 
     for (var letter in alphabet){
       if (alphabet.hasOwnProperty(letter) && alphabet[letter] < 1){
-        console.log(letter)
-       //return "false";
+       return false;
       }
     }
 
-    return "true";
-
-
+    return true;
   }
-
 
 
 }
 
-export default pangram;
+export default Pangram;

@@ -1,89 +1,78 @@
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
-function pangram() {
 
-<<<<<<< HEAD
-  this.isPangram = function (sentence) {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-    // if (!sentence){
-    //   return false;
-    // }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-    var cleaned = sentence.replace(/[^A-Za-z]/g, '').toLowerCase();
+var Pangram = (function () {
+  function Pangram(sentence) {
+    _classCallCheck(this, Pangram);
 
-    var alphabet = {
-      a: 0,
-=======
-  this.isPangram = function (term) {
+    this.sentence = sentence;
+  }
 
-    if (!term) return false;
+  _createClass(Pangram, [{
+    key: 'isPangram',
+    value: function isPangram() {
 
-    var termLower = term.toLowerCase();
-
-    var characterMap = { a: 0,
->>>>>>> 28e802e649a84864ffb8af3eb92f71a32a7f5f81
-      b: 0,
-      c: 0,
-      d: 0,
-      e: 0,
-      f: 0,
-      g: 0,
-      h: 0,
-      i: 0,
-      j: 0,
-      k: 0,
-      l: 0,
-      m: 0,
-      n: 0,
-      o: 0,
-      p: 0,
-      q: 0,
-      r: 0,
-      s: 0,
-      t: 0,
-      u: 0,
-      v: 0,
-      w: 0,
-      x: 0,
-      y: 0,
-      z: 0
-    };
-
-<<<<<<< HEAD
-    Array.from(cleaned).forEach(function (val, index) {
-      if (alphabet.hasOwnProperty(val)) {
-        alphabet[val]++;
-      }
-    });
-
-    for (var letter in alphabet) {
-      if (alphabet.hasOwnProperty(letter) && alphabet[letter] < 1) {
-        console.log(letter);
-        //return "false";
-      }
-    }
-
-    return "true";
-=======
-    var termArray = termLower.split();
-
-    termArray.forEach(function (letter) {
-      characterMap[letter]++;
-    });
-
-    characterMap.forEach(function (letter) {
-      if (characterMap[letter] == 0) {
+      if (!this.sentence) {
         return false;
       }
-    });
-    console.log(characterMap);
-    return true;
->>>>>>> 28e802e649a84864ffb8af3eb92f71a32a7f5f81
-  };
-}
 
-exports["default"] = pangram;
-module.exports = exports["default"];
+      var cleaned = this.sentence.replace(/[^A-Za-z]/g, '').toLowerCase();
+
+      var alphabet = {
+        a: 0,
+        b: 0,
+        c: 0,
+        d: 0,
+        e: 0,
+        f: 0,
+        g: 0,
+        h: 0,
+        i: 0,
+        j: 0,
+        k: 0,
+        l: 0,
+        m: 0,
+        n: 0,
+        o: 0,
+        p: 0,
+        q: 0,
+        r: 0,
+        s: 0,
+        t: 0,
+        u: 0,
+        v: 0,
+        w: 0,
+        x: 0,
+        y: 0,
+        z: 0
+      };
+
+      Array.from(cleaned).forEach(function (val, index) {
+        if (alphabet.hasOwnProperty(val)) {
+          alphabet[val]++;
+        }
+      });
+
+      for (var letter in alphabet) {
+        if (alphabet.hasOwnProperty(letter) && alphabet[letter] < 1) {
+          console.log(letter);
+          return false;
+        }
+      }
+
+      return true;
+    }
+  }]);
+
+  return Pangram;
+})();
+
+exports['default'] = Pangram;
+module.exports = exports['default'];
