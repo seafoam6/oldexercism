@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 function pangram() {
 
+<<<<<<< HEAD
   this.isPangram = function (sentence) {
 
     // if (!sentence){
@@ -15,6 +16,15 @@ function pangram() {
 
     var alphabet = {
       a: 0,
+=======
+  this.isPangram = function (term) {
+
+    if (!term) return false;
+
+    var termLower = term.toLowerCase();
+
+    var characterMap = { a: 0,
+>>>>>>> 28e802e649a84864ffb8af3eb92f71a32a7f5f81
       b: 0,
       c: 0,
       d: 0,
@@ -42,6 +52,7 @@ function pangram() {
       z: 0
     };
 
+<<<<<<< HEAD
     Array.from(cleaned).forEach(function (val, index) {
       if (alphabet.hasOwnProperty(val)) {
         alphabet[val]++;
@@ -56,6 +67,21 @@ function pangram() {
     }
 
     return "true";
+=======
+    var termArray = termLower.split();
+
+    termArray.forEach(function (letter) {
+      characterMap[letter]++;
+    });
+
+    characterMap.forEach(function (letter) {
+      if (characterMap[letter] == 0) {
+        return false;
+      }
+    });
+    console.log(characterMap);
+    return true;
+>>>>>>> 28e802e649a84864ffb8af3eb92f71a32a7f5f81
   };
 }
 

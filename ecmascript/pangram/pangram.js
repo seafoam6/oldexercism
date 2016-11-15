@@ -1,10 +1,11 @@
-function pangram(){
+function pangram(sentence){
 
-  this.isPangram = function(sentence){
 
-    // if (!sentence){
-    //   return false;
-    // }
+  this.isPangram = function(){
+
+    if (!sentence){
+      return false;
+    }
 
     var cleaned = sentence.replace(/[^A-Za-z]/g, '').toLowerCase();
 
@@ -58,7 +59,5 @@ function pangram(){
 
 
 }
-
-
 
 export default pangram;
