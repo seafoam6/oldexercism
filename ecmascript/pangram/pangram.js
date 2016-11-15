@@ -2,9 +2,9 @@ function pangram(){
 
   this.isPangram = function(sentence){
 
-    if (!sentence){
-      return false;
-    }
+    // if (!sentence){
+    //   return false;
+    // }
 
     var cleaned = sentence.replace(/[^A-Za-z]/g, '').toLowerCase();
 
@@ -45,8 +45,8 @@ function pangram(){
 
     for (var letter in alphabet){
       if (alphabet.hasOwnProperty(letter) && alphabet[letter] < 1){
-        //console.log(letter)
-       return "false";
+        console.log(letter)
+       //return "false";
       }
     }
 
