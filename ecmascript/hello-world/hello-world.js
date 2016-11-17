@@ -4,11 +4,8 @@
 //
 
 class HelloWorld {
-  hello(name) {
-    if (name){
+  hello(name = "World") {
       return `Hello, ${name}!`;
-    }
-    return "Hello, World!"
   }
 }
 
